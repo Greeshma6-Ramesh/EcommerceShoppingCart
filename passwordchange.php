@@ -32,7 +32,7 @@ session_start();
                         </div>
                         <div class="form-group mb-3">
                             <label for="">New Password</label>
-                            <input type="password" name="newpwd" class="form-control" required>
+                            <input type="password" id="pass" name="newpwd" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Confirm Password</label>
