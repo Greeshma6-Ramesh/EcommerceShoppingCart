@@ -4,7 +4,7 @@ $page_title="Registration Form";
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
-<div class="py-3">
+<div class="py-0">
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -22,30 +22,38 @@ include('includes/navbar.php');
                     <h5>Registration Form</h5>
                 </div>
                 <div class="card-body">
-                    <form action="registercode.php" method="post">
+                    <form id="registration" action="registercode.php" method="post" >
+                     
                         <div class="form-group mb-3">
                             <label for="">Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" minlength="2" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Address</label>
-                            <input type="text" name="address" class="form-control">
+                            <input type="text" name="address" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Zipcode</label>
+                            <input type="text" name="zip" class="form-control zipcode" required>
+                            <span id="errorzip" style="color:red"></span>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Phone number</label>
-                            <input type="text" name="phone" class="form-control">
+                            <input type="text" name="phone" class="form-control third-phone" required>
+                            <span id="errorphone" style="color:red"></span>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Email-id</label>
-                            <input type="text" name="email" class="form-control">
+                            <input type="text" name="email" class="form-control checkemail" required>
+                            <span class="errordisplay" style="color:red"></span>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Password</label>
-                            <input type="text" name="password" class="form-control">
+                            <input type="text" id="pass" name="newpwd" class="form-control" required>
                         </div>
                         <div class="form-group  mb-3">
                             <label for="">Re-type Password</label>
-                            <input type="text" name="rpassword" class="form-control">
+                            <input type="text" name="confirmpwd" class="form-control" required>
                         </div>
                         <div class="form-group  mb-3">
                            <button type="submit" name="register_btn" class="btn btn-primary">Register</button>

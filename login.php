@@ -27,11 +27,11 @@ include('includes/navbar.php');
                     <form action="logincode.php" method="POST">
                         <div class="form-group mb-3">
                             <label for="">E-mail id</label>
-                            <input type="text" name="emailid" class="form-control">
+                            <input type="text" name="emailid" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Password</label>
-                            <input type="text" name="pwd" class="form-control">
+                            <input type="password" name="pwd" class="form-control" required>
                         </div>
                         
                         <div class="form-group  mb-3">

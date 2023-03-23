@@ -31,7 +31,7 @@ include('includes/navbar.php');
                            <form action="pwdresetcode.php" method="POST">
                               <div class="form-group mb-3">
                                  <label>Email Address</label>
-                                 <input type="text" name="email" class="form-control" placeholder="Enter email address">
+                                 <input type="text" name="email" class="form-control" placeholder="Enter email address" required>
                               </div>
                               <div class="form-group mb-3">
                                  <button type="submit" name="reset_btn" class="btn btn-primary">Send Password Reset Link</button>

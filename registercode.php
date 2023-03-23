@@ -42,9 +42,11 @@ if(isset($_POST['register_btn']))
 {
     $name=$_POST['name'];
     $address=$_POST['address'];
+    $zip=$_POST['zip'];
     $phone=$_POST['phone'];
     $email=$_POST['email'];
-    $password=$_POST['password'];
+    $password=$_POST['newpwd'];
+    $cpwd=$_POST['confirmpwd'];
     $verify_token=md5(rand());
   
     
@@ -56,7 +58,9 @@ if(isset($_POST['register_btn']))
          header("Location:register.php");
     }
     else{
-       $query="insert into customers(name,address,phone,email,password,verify_token)values('$name','$address','$phone','$email','$password','$verify_token')";
+
+        if($password==$cpwd){
+       $query="insert into customers(name,address,zip,phone,email,password,verify_token)values('$name','$address','$zip','$phone','$email','$password','$verify_token')";
        $sql=mysqli_query($conn,$query);
 
        if($sql)
@@ -69,7 +73,15 @@ if(isset($_POST['register_btn']))
             $_SESSION['status']="Registration failed";
             header("Location:register.php");
         }
-    
+
+      }
+       else{
+        $_SESSION['status']="Passwords do not match";
+        header("Location:register.php");
+         }
+
+
+
    }
 
 

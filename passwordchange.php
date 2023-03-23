@@ -24,7 +24,7 @@ session_start();
                     <h5>Password Change</h5>
                 </div>
                 <div class="card-body">
-                    <form action="pwdresetcode.php" method="POST">
+                    <form  action="pwdresetcode.php" method="POST">
                         <div class="form-group mb-3">
                             <input type="hidden" value=<?php if(isset($_GET['token'])) {echo $_GET['token'];}?> name="pwdtoken" class="form-control">
                             <label for="">E-mail id</label>
@@ -32,11 +32,11 @@ session_start();
                         </div>
                         <div class="form-group mb-3">
                             <label for="">New Password</label>
-                            <input type="text" name="newpwd" class="form-control">
+                            <input type="password" name="newpwd" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Confirm Password</label>
-                            <input type="text" name="confirmpwd" class="form-control">
+                            <input type="password" name="confirmpwd" class="form-control"  required>
                         </div>
                         
                         <div class="form-group  mb-3">
