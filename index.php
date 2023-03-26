@@ -1,14 +1,16 @@
 <?php 
+include('includes/db.inc.php');
 $page_title="Home Page";
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 
+
 ?>
 <div class="py-5">
   <div class="container">
-       <div class="row">
+       <div class="row">  
          <div class="col-md-12">
-                 
+            
          </div>
        </div>
 
