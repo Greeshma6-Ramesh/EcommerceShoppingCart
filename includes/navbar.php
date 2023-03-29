@@ -23,10 +23,10 @@
            Products
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Iphone</a></li>
-            <li><a class="dropdown-item" href="#">Ipad</a></li>
-            <li><a class="dropdown-item" href="#">Watch</a></li>
-            <li><a class="dropdown-item" href="#">EarPods</a></li>
+            <li><a class="dropdown-item" href="products.php">Iphone</a></li>
+            <li><a class="dropdown-item" href="products.php">Ipad</a></li>
+            <li><a class="dropdown-item" href="products.php">Watch</a></li>
+            <li><a class="dropdown-item" href="products.php">EarPods</a></li>
           </ul>
         </li>
         <li class="nav-item px-2">

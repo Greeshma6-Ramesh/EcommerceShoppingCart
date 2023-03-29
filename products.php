@@ -5,12 +5,17 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
-if(isset($_POST["prodsubmit"]))
-{
-$item=$_POST["prodsearch"];
-$item=trim
 
-}
+<div class="container">
+      $query="select * from products where name='$name'";
+      $sqlrun=mysqli_query($conn,$query);
+
+        if(mysqli_num_rows($sqlrun)>0)
+        {
+
+        }
+</div>
+
 
 
 
