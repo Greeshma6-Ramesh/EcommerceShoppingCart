@@ -33,15 +33,19 @@
           <a class="nav-link" href="contactus.php">Contact Us</a>
         </li>
       </ul>
-      <div class="search">
-      <form class="form-inline" role="search">
-        <input class="form-control mr-sm-2 searchbar" type="search" placeholder="Search" aria-label="Search" name="prodsearch">
-        <button class="btn btn-outline-success" type="submit" name="prodsubmit">Search</button><&nbsp>
-        <button type="submit" class="cart"><i class="fa-sharp fa-solid fa-cart-shopping fa-xl" style="color: #ffffff;"></i></button>
-      </form>
-      
-      </div>
-    
+      <?php
+         $count=0;
+         if(isset($_SESSION['cart']))
+         {
+          $count=count($_SESSION['cart']);
+         }
+      ?>
+        
+         <form class="d-flex" role="search">
+         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="prodsearch">
+         <button class="btn btn-outline-success" type="submit" name="prodsubmit">Search</button><&nbsp>
+         </form>
+         <a href="mycart.php" class="cart" style="text-decoration:none"><i class="fa-sharp fa-solid fa-cart-shopping fa-xl" style="color: #ffffff;"></i><?php echo $count; ?></a>
     </div>
   </div>
 </nav>
