@@ -2,7 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
   "hideSelection": true,
   "hideListHeader": true,
-  
   "rowFormatter": {
     "elmType": "div",
     "style": {
@@ -44,8 +43,8 @@
                   "border-radius": "50%",
                   "margin-right": "8px"
                 },
-				"defaultHoverField": "[$TeamsAccount]",
-				"inlineEditField": "[$TeamsAccount]",
+                "defaultHoverField": "[$TeamsAccount]",
+                "inlineEditField": "[$TeamsAccount]",
                 "children": [
                   {
                     "elmType": "img",
@@ -64,6 +63,23 @@
                     }
                   }
                 ]
+              },
+              {
+                "elmType": "span",
+                "txtContent": "=[$Full_x0020_Name]",
+                "customRowAction": {
+                  "action": "defaultClick"
+                },
+                "style": {
+                  "border": "none",
+                  "background-color": "inherit",
+                  "display": "block",
+                  "cursor": "pointer"
+                },
+                "attributes": {
+                  "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary",
+                  "title": "Open contact card"
+                }
               }
             ]
           },
@@ -86,40 +102,23 @@
                 "children": [
                   {
                     "elmType": "span",
-                    "txtContent": "[$Full_x0020_Name]",
-					"customRowAction": {
-						"action": "defaultClick"
-					},
-                    "style": {
-						"border": "none",
-						"background-color": "inherit",
-						"display": "block",
-						"cursor": "pointer"
-                    },
-                    "attributes": {
-                      "class": "ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary",
-					  "title": "Open contact card"
-                    }
-                  },
-                  {
-                    "elmType": "span",
                     "txtContent": "[$Job_x0020_Title]",
-					"inlineEditField": "[$Job_x0020_Title]",
+                    "inlineEditField": "[$Job_x0020_Title]",
                     "style": {
                       "display": "=if([$Job_x0020_Title] == '', 'none', 'block')",
-					  "cursor": "pointer"
+                      "cursor": "pointer"
                     },
                     "attributes": {
                       "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary"
                     }
                   },
-				  {
+                  {
                     "elmType": "span",
                     "txtContent": "[$Department]",
-					"inlineEditField": "[$Department]",
+                    "inlineEditField": "[$Department]",
                     "style": {
                       "display": "=if([$Department] == '', 'none', 'block')",
-					  "cursor": "pointer"
+                      "cursor": "pointer"
                     },
                     "attributes": {
                       "class": "ms-fontSize-s ms-fontWeight-regular ms-fontColor-neutralSecondary"
@@ -215,16 +214,16 @@
             },
             "children": [
               {
-                    "elmType": "span",
-                    "txtContent": "=if([$Company] == '', if([$School_x0020_Affilitation] == '', 'Unknown Affiliation', [$School_x0020_Affilitation]), [$Company])",					
-                    "style": {
-                      "display": "block"
-                    },
-                    "attributes": {
-                      "class": "ms-fontSize-mPlus ms-fontWeight-semibold ms-fontColor-neutralSecondary",
-					  "title":"='Affiliation: ' + [$School_x0020_Affilitation]"
-                    }
-                  }
+                "elmType": "span",
+                "txtContent": "=if([$Company] == '', if([$School_x0020_Affilitation] == '', 'Unknown Affiliation', [$School_x0020_Affilitation]), [$Company])",
+                "style": {
+                  "display": "block"
+                },
+                "attributes": {
+                  "class": "ms-fontSize-mPlus ms-fontWeight-semibold ms-fontColor-neutralSecondary",
+                  "title": "='Affiliation: ' + [$School_x0020_Affilitation]"
+                }
+              }
             ]
           },
           {
@@ -236,74 +235,74 @@
             "children": [
               {
                 "elmType": "span",
-				"inlineEditField":"[$Center_x0020_Member]",
+                "inlineEditField": "[$Center_x0020_Member]",
                 "txtContent": "=if([$Center_x0020_Member] == 'Yes', '🗹 Center Member', '☐ Center Member'",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if([$Center_x0020_Member] == 'Yes', 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if([$Center_x0020_Member] == 'Yes', 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               },
               {
                 "elmType": "span",
-				"txtContent": "=if(indexOf([$Group_x0020_Member],'Yes') >= 0, '🗹 Group Member', '☐ Group Member')",
-				"inlineEditField": "[$Group_x0020_Member]",
+                "txtContent": "=if(indexOf([$Group_x0020_Member],'Yes') >= 0, '🗹 Group Member', '☐ Group Member')",
+                "inlineEditField": "[$Group_x0020_Member]",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if(indexOf([$Group_x0020_Member],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if(indexOf([$Group_x0020_Member],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               },
-			  {
+              {
                 "elmType": "span",
-				"txtContent": "=if(indexOf([$Study_x0020_Team_x0020_Member],'Yes') >= 0, '🗹 Study Team Member', '☐ Study Team Member')",
-				"inlineEditField": "[$Study_x0020_Team_x0020_Member]",
+                "txtContent": "=if(indexOf([$Study_x0020_Team_x0020_Member],'Yes') >= 0, '🗹 Study Team Member', '☐ Study Team Member')",
+                "inlineEditField": "[$Study_x0020_Team_x0020_Member]",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if(indexOf([$Study_x0020_Team_x0020_Member],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if(indexOf([$Study_x0020_Team_x0020_Member],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               },
-			  {
+              {
                 "elmType": "span",
-				"txtContent": "=if(indexOf([$Has_x0020_Received_x0020_Servies],'Yes') >= 0, '🗹 Has Received Services', '☐ Has Received Services')",
-				"inlineEditField": "[$Has_x0020_Received_x0020_Servies]",
+                "txtContent": "=if(indexOf([$Has_x0020_Received_x0020_Servies],'Yes') >= 0, '🗹 Has Received Services', '☐ Has Received Services')",
+                "inlineEditField": "[$Has_x0020_Received_x0020_Servies]",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if(indexOf([$Has_x0020_Received_x0020_Servies],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if(indexOf([$Has_x0020_Received_x0020_Servies],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               },
-			  {
+              {
                 "elmType": "span",
-				"txtContent": "=if(indexOf([$Has_x0020_Attended_x0020_Events],'Yes') >= 0, '🗹 Has Attended Events', '☐ Has Attended Events')",
-				"inlineEditField": "[$Has_x0020_Attended_x0020_Events]",
+                "txtContent": "=if(indexOf([$Has_x0020_Attended_x0020_Events],'Yes') >= 0, '🗹 Has Attended Events', '☐ Has Attended Events')",
+                "inlineEditField": "[$Has_x0020_Attended_x0020_Events]",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if(indexOf([$Has_x0020_Attended_x0020_Events],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if(indexOf([$Has_x0020_Attended_x0020_Events],'Yes') >= 0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               },
-			  {
+              {
                 "elmType": "span",
-				"txtContent": "=if([$Active] == 'Yes', '🗹 Active', '☐ Active')",
-				"inlineEditField": "[$Active]",
+                "txtContent": "=if([$Active] == 'Yes', '🗹 Active', '☐ Active')",
+                "inlineEditField": "[$Active]",
                 "style": {
                   "display": "block",
-				  "cursor": "pointer"
+                  "cursor": "pointer"
                 },
                 "attributes": {
-					"class": "=if([$Active] == 'Yes', 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                  "class": "=if([$Active] == 'Yes', 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
                 }
               }
             ]
@@ -343,7 +342,7 @@
                   "padding-left": "8px"
                 },
                 "txtContent": "=if([$Notes]=='', 'No notes entered', substring([$Notes], 0, 200) + '...')",
-				"inlineEditField": "[$Notes]",
+                "inlineEditField": "[$Notes]",
                 "attributes": {
                   "class": "ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary"
                 }
@@ -377,123 +376,119 @@
                   {
                     "elmType": "span",
                     "attributes": {
-                      "iconName"	: "Share"
+                      "iconName": "Share"
                     }
                   }
                 ]
               },
-			  
-			  {
+              {
                 "elmType": "a",
                 "attributes": {
-					"href": "=@currentWeb + '/Lists/Studies/StudyStatus.aspx?view=7&q=' + [$Full_x0020_Name] ",
-					"target": "_top",
-					"title": "Find studies"
+                  "href": "=@currentWeb + '/Lists/Studies/StudyStatus.aspx?view=7&q=' + [$Full_x0020_Name] ",
+                  "target": "_top",
+                  "title": "Find studies"
                 },
-				"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
-				"style":{
-					"text-decoration": "none",
-					"border": "none",
-					"background-color": "transparent",
-					"cursor": "pointer"
-				},
-				"children": [
-					{
-						"elmType": "button",
-						"attributes": {
-							"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
-						},
-						"style":{
-							"border": "none",
-							"background-color": "transparent",
-							"cursor": "pointer"
-						},
-						"children": [
-							{
-								"elmType": "span",
-								"attributes": {
-									"iconName": "TimeLineProgress"
-								}
-							}
-						]
-					}
-				]
+                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                "style": {
+                  "text-decoration": "none",
+                  "border": "none",
+                  "background-color": "transparent",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "button",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                    },
+                    "style": {
+                      "border": "none",
+                      "background-color": "transparent",
+                      "cursor": "pointer"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "TimeLineProgress"
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
-			  
-			  {
+              {
                 "elmType": "a",
                 "attributes": {
-					"href": "='https://orcid.org/' + [$ORCID]",
-					"target": "_blank",
-					"title": "=if([$ORCID]=='', 'ORCiD not available.', 'ORCiD: ' + [$ORCID])"
+                  "href": "='https://orcid.org/' + [$ORCID]",
+                  "target": "_blank",
+                  "title": "=if([$ORCID]=='', 'ORCiD not available.', 'ORCiD: ' + [$ORCID])"
                 },
-				"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
-				"style":{
-					"text-decoration": "none",
-					"border": "none",
-					"background-color": "transparent",
-					"cursor": "pointer"
-				},
-				"children": [
-					{
-						"elmType": "button",
-						"attributes": {
-							"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
-						},
-						"style":{
-							"border": "none",
-							"background-color": "transparent",
-							"cursor": "pointer"
-						},
-						"children": [
-							{
-								"elmType": "span",
-								"attributes": {
-									"iconName": "Website"
-								}
-							}
-						]
-					}
-				]
+                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                "style": {
+                  "text-decoration": "none",
+                  "border": "none",
+                  "background-color": "transparent",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "button",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                    },
+                    "style": {
+                      "border": "none",
+                      "background-color": "transparent",
+                      "cursor": "pointer"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "Website"
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
-			  
-			  {
+              {
                 "elmType": "a",
                 "attributes": {
-					"href": "=[$Depression_x0020_Center_x0020_Profile]",
-					"target": "_blank",
-					"title": "=if([$Depression_x0020_Center_x0020_Profile]=='','Depression Center Profile not available.', 'Visit Depression Center Profile')"
+                  "href": "=[$Depression_x0020_Center_x0020_Profile]",
+                  "target": "_blank",
+                  "title": "=if([$Depression_x0020_Center_x0020_Profile]=='','Depression Center Profile not available.', 'Visit Depression Center Profile')"
                 },
-				"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
-				"style":{
-					"text-decoration": "none",
-					"border": "none",
-					"background-color": "transparent",
-					"cursor": "pointer"
-				},
-				"children": [
-					{
-						"elmType": "button",
-						"attributes": {
-							"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
-						},
-						"style":{
-							"border": "none",
-							"background-color": "transparent",
-							"cursor": "pointer"
-						},
-						"children": [
-							{
-								"elmType": "span",
-								"attributes": {
-									"iconName": "ProfileSearch"
-								}
-							}
-						]
-					}
-				]
+                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                "style": {
+                  "text-decoration": "none",
+                  "border": "none",
+                  "background-color": "transparent",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "button",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                    },
+                    "style": {
+                      "border": "none",
+                      "background-color": "transparent",
+                      "cursor": "pointer"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "ProfileSearch"
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
-
               {
                 "elmType": "button",
                 "customRowAction": {
@@ -524,3 +519,5 @@
     ]
   }
 }
+
+
